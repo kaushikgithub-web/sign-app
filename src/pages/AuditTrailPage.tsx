@@ -5,13 +5,13 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { 
-  ArrowLeft, 
-  Search, 
-  Shield, 
-  Clock, 
-  User, 
-  FileText, 
+import {
+  ArrowLeft,
+  Search,
+  Shield,
+  Clock,
+  User,
+  FileText,
   CheckCircle,
   XCircle,
   Globe,

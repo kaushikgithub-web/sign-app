@@ -29,7 +29,7 @@ const Dashboard: React.FC = () => {
   const fetchDocuments = async () => {
     setLoading(true);
     try {
-      const res = await axios.get('http://localhost:5000/api/documents/mydocs', {
+      const res = await axios.get('https://signature-app-server-1-i8c4.onrender.com/api/documents/mydocs', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('auth_token')}`,
         },
@@ -70,7 +70,7 @@ const Dashboard: React.FC = () => {
 
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:5000/api/documents/${id}`, {
+      await axios.delete(`https://signature-app-server-1-i8c4.onrender.com/api/documents/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('auth_token')}` },
       });
       toast.success('Document deleted successfully');

@@ -43,7 +43,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', {
+      const res = await axios.post('https://signature-app-server-1-i8c4.onrender.com/api/auth/login', {
         email,
         password,
       });
@@ -65,7 +65,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const register = async (name: string, email: string, password: string): Promise<boolean> => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', {
+      const res = await axios.post('https://signature-app-server-1-i8c4.onrender.com/api/auth/register', {
         name,
         email,
         password,

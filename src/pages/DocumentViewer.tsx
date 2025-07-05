@@ -78,7 +78,7 @@ const DocumentViewer = () => {
 
   const fetchDocument = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/documents/${id}`, {
+      const res = await axios.get(`https://signature-app-server-1-i8c4.onrender.com/api/documents/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('auth_token')}` },
       });
       setDocData(res.data);
@@ -92,7 +92,7 @@ const DocumentViewer = () => {
   const saveSignatureFieldsToServer = async (fields: SignatureField[]) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/documents/${id}/fields`,
+        `https://signature-app-server-1-i8c4.onrender.com/api/documents/${id}/fields`,
         { signatureFields: fields },
         { headers: { Authorization: `Bearer ${localStorage.getItem('auth_token')}` } }
       );
@@ -179,7 +179,7 @@ const DocumentViewer = () => {
       pdf.save(docData.originalName || 'signed_document.pdf');
 
       await axios.put(
-        `http://localhost:5000/api/documents/${id}/status`,
+        `https://signature-app-server-1-i8c4.onrender.com/api/documents/${id}/status`,
         { status: 'completed' },
         {
           headers: { Authorization: `Bearer ${localStorage.getItem('auth_token')}` },
@@ -242,7 +242,7 @@ const DocumentViewer = () => {
     );
   }
 
-  const pdfUrl = `http://localhost:5000/${docData.path.replace(/\\/g, '/')}`;
+  const pdfUrl = `https://signature-app-server-1-i8c4.onrender.com/${docData.path.replace(/\\/g, '/')}`;
 
   return (
     <div className="h-screen flex flex-col bg-gray-50">

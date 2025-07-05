@@ -126,7 +126,7 @@ const UploadPage: React.FC = () => {
       formData.append('pdf', selectedFile.file);
       formData.append('signers', JSON.stringify(validSigners));
 
-      const res = await fetch('http://localhost:5000/api/documents/upload', {
+      const res = await fetch('https://signature-app-server-1-i8c4.onrender.com/api/documents/upload', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('auth_token') || ''}`,
